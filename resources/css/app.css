@@ -1,3 +1,94 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Fond général avec un dégradé */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #141e30, #243b55);
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+/* Titre principal */
+h1 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 28px;
+}
+
+/* Conteneur des films en mode grille */
+.movies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px; /* ✅ Pour limiter la largeur totale */
+    margin: auto; /* ✅ Centre le contenu */
+}
+
+/* Style des cartes */
+.movie-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    width: 30%; /* ✅ Assure que 3 films tiennent par ligne */
+    min-width: 250px; /* ✅ Évite que les cartes deviennent trop petites */
+    text-align: center;
+    color: #333;
+    transition: transform 0.2s;
+}
+
+/* Effet au survol de la carte */
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+/* Images des films */
+.movie-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Titres des films */
+.movie-card h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Informations */
+.movie-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Bouton "Voir les détails" */
+.movie-card .details-button {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+/* Effet au survol du bouton */
+.movie-card .details-button:hover {
+    background-color: #217dbb;
+}
+
+/* ✅ Responsive : 2 films par ligne sur tablette */
+@media screen and (max-width: 1024px) {
+    .movie-card {
+        width: 45%;
+    }
+}
+
+/* ✅ Responsive : 1 film par ligne sur mobile */
+@media screen and (max-width: 600px) {
+    .movie-card {
+        width: 90%;
+    }
+}
