@@ -3,34 +3,3 @@ vendor/
 
 # 📌 Ignorer les dépendances Node.js (on les installe avec `npm install`)
 node_modules/
-
-# 📌 Ignorer les fichiers d'environnement (on garde seulement `.env.example`)
-.env
-.env.local
-.env.production
-.env.testing
-
-# 📌 Ignorer les fichiers de logs et de cache
-storage/*.key
-storage/logs/*
-storage/framework/cache/*
-storage/framework/sessions/*
-storage/framework/views/*
-bootstrap/cache/*
-
-# 📌 Ignorer les fichiers générés par Laravel Mix / Vite
-public/storage
-public/hot
-public/mix-manifest.json
-public/js/*
-public/css/*
-public/build
-
-# 📌 Ignorer les fichiers spécifiques à l'IDE (VS Code, PHPStorm...)
-.vscode/
-.idea/
-*.iml
-
-# 📌 Ignorer les fichiers système inutiles (Mac / Windows)
-.DS_Store
-Thumbs.db
