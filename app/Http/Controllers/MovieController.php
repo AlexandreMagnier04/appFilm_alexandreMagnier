@@ -14,7 +14,7 @@ class MovieController
 
         $response = $client->request('GET', 'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', [
             'headers' => [
-                'Authorization' => '',
+                'Authorization' => 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZDcxNGUzN2JlMjJjNjBkZTcyYWZiYThmMDI3ZjNhMyIsIm5iZiI6MTczODIzMzM1Ny45MzI5OTk4LCJzdWIiOiI2NzliNTYwZDA5MDJiNjllYzdmYmNhNjMiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.EATlSFwZB_ceRRxjcrUX2LL_Np_tSgcrRKV5PPLlIig',
                 'accept' => 'application/json',
             ]
         ]);
@@ -49,7 +49,7 @@ class MovieController
         $client = new \GuzzleHttp\Client();
         $response = $client->request('GET', 'https://api.themoviedb.org/3/movie/' . $id . '?language=en-US',  [
             'headers' => [
-                'Authorization' => '',
+                'Authorization' => 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZDcxNGUzN2JlMjJjNjBkZTcyYWZiYThmMDI3ZjNhMyIsIm5iZiI6MTczODIzMzM1Ny45MzI5OTk4LCJzdWIiOiI2NzliNTYwZDA5MDJiNjllYzdmYmNhNjMiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.EATlSFwZB_ceRRxjcrUX2LL_Np_tSgcrRKV5PPLlIig',
                 'accept' => 'application/json',
             ],
         ]);
@@ -61,7 +61,7 @@ class MovieController
         // Récupérer le synopsis, les genres et convertir la date en français 
         $responseFr = $client->request('GET', 'https://api.themoviedb.org/3/movie/' . $id . '?language=fr-FR', [
             'headers' => [
-                'Authorization' => '',
+                'Authorization' => 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZDcxNGUzN2JlMjJjNjBkZTcyYWZiYThmMDI3ZjNhMyIsIm5iZiI6MTczODIzMzM1Ny45MzI5OTk4LCJzdWIiOiI2NzliNTYwZDA5MDJiNjllYzdmYmNhNjMiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.EATlSFwZB_ceRRxjcrUX2LL_Np_tSgcrRKV5PPLlIig',
                 'accept' => 'application/json',
             ],
         ]);
