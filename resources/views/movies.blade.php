@@ -3,30 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <title>Films Populaires</title>
+    @vite(['resources/css/app.css'])
+    <title>Films populaires</title>
+
+
+
 </head>
 <body>
 
-    <h1>🎬 Films Populaires</h1>
+    <h1>🎬 Films du moment</h1>
 
     <div class="movies-container">
         @foreach ($movies as $movie)
             <div class="movie-card">
-                <h2>{{ $movie->getTitle() }}</h2>
-                
-                @if ($movie->getPosterUrl())
-                    <img src="{{ $movie->getPosterUrl() }}" alt="Affiche de {{ $movie->getTitle() }}">
-                @else
-                    <p>Aucune affiche disponible</p>
-                @endif
-                
-                <p><strong>Note :</strong> ⭐ {{ $movie->getRating() }}/10</p>
-                <p><strong>Langue :</strong> {{ strtoupper($movie->getLanguage()) }}</p>
-                <p><strong>Date de sortie :</strong> {{ $movie->getReleaseDate() }}</p>
-
-                <!-- Bouton pour voir les détails -->
-                <a href="{{ url('/movie/' . $movie->getTitle()) }}" class="details-button">Voir les détails</a>
+               <a href="{{ url('/movies/'. $movie->id) }}">
+                    <img src="https://image.tmdb.org/t/p/w500{{ $movie->getPosterUrl() }}">
+                </a>
+                <div class="movie-info">
+                    <h3>{{ $movie->getTitle()}}</h3>
+                    <p>⭐ Note : {{ number_format($movie->getRating(), 1)}}/10</p>
+                    <p>🗓️ Sortie : {{ $movie->getReleaseDate() }}</p>
+                    <p>🌍 Langue : {{strtoupper($movie->getLanguage())}}</p>
+                </div>
             </div>
         @endforeach
     </div>

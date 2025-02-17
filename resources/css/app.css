@@ -1,94 +1,112 @@
-/* Fond général avec un dégradé */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #141e30, #243b55);
+    background-color: #0c2240;
+    color: rgb(255, 255, 255);
     margin: 0;
     padding: 20px;
-    text-align: center;
-    color: white;
 }
 
-/* Titre principal */
-h1 {
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 28px;
-}
-
-/* Conteneur des films en mode grille */
+/* Pages des films */
 .movies-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
-    max-width: 1200px; /* ✅ Pour limiter la largeur totale */
-    margin: auto; /* ✅ Centre le contenu */
+    padding: 20px;
 }
 
-/* Style des cartes */
 .movie-card {
-    background: white;
+    background:#1f5bd3;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 15px;
-    width: 30%; /* ✅ Assure que 3 films tiennent par ligne */
-    min-width: 250px; /* ✅ Évite que les cartes deviennent trop petites */
-    text-align: center;
-    color: #333;
-    transition: transform 0.2s;
+    width: 230px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
 }
 
-/* Effet au survol de la carte */
 .movie-card:hover {
     transform: scale(1.05);
 }
 
-/* Images des films */
 .movie-card img {
     width: 100%;
-    border-radius: 10px;
+    height: 350px;
+    object-fit: cover;
 }
 
-/* Titres des films */
-.movie-card h2 {
+.movie-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.movie-info h3 {
+    margin: 10px;
     font-size: 18px;
-    margin: 10px 0;
 }
 
-/* Informations */
-.movie-card p {
+.movie-info p {
     font-size: 14px;
-    color: #666;
+    margin: 5px 0;
 }
 
-/* Bouton "Voir les détails" */
-.movie-card .details-button {
+.movie-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Page de détails */
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fdfeff;
+    text-align: center;
+    font-family:BankGothic;
+}
+
+.movie-poster {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+.movie-details-container {
+    max-width: 600px;
+    background: #1f5bd3;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+.movie-details-container strong {
+    color: #fff;
+}
+
+.align-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.back-button {
     display: inline-block;
-    background-color: #3498db;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff416c;
     color: white;
     text-decoration: none;
-    padding: 8px 12px;
     border-radius: 5px;
-    margin-top: 10px;
-    transition: background 0.3s;
+    font-weight: bold;
 }
 
-/* Effet au survol du bouton */
-.movie-card .details-button:hover {
-    background-color: #217dbb;
+.back-button:hover {
+    background-color: #ff4b2b;
 }
 
-/* ✅ Responsive : 2 films par ligne sur tablette */
-@media screen and (max-width: 1024px) {
-    .movie-card {
-        width: 45%;
-    }
-}
-
-/* ✅ Responsive : 1 film par ligne sur mobile */
-@media screen and (max-width: 600px) {
-    .movie-card {
-        width: 90%;
-    }
+.flex-details{
+    display: flex;
+    gap: 30px;
 }
